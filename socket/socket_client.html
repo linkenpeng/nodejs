@@ -6,13 +6,13 @@
 <script src="jquery.min.js"></script>
 <script src="jquery.cookie.ext.js"></script>
 <script src="http://192.168.7.254:3000/socket.io/socket.io.js"></script>
-<script>
-$(ducoment).ready(function(){
+<script type="text/javascript">
+$(document).ready(function(){
 	$.setCookie("socket","socket");
 	var socket = io.connect('http://192.168.7.254:3000/');
 	socket.on('news', function(data) {
 		console.log(data);
-		socket.emit('my other event', { my: 'data' });
+		socket.emit('my other event', 'This is Client Send.');
 	});
 	socket.on('user connected', function(data) {
 		console.log(data);
@@ -21,9 +21,9 @@ $(ducoment).ready(function(){
 		console.log(data);
 	});
 });
-
 </script>
 </head>
 <body>
+<img src="http://192.168.7.254:3000/" width="0" height="0" />
 </body>
 </html>
