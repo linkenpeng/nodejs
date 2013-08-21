@@ -3,9 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <title>Nodejs socket测试</title>
+<script src="jquery.min.js"></script>
+<script src="jquery.cookie.ext.js"></script>
 <script src="http://192.168.7.254:3000/socket.io/socket.io.js"></script>
 <script>
-window.onload = function() {
+$(ducoment).ready(function(){
+	$.setCookie("socket","socket");
 	var socket = io.connect('http://192.168.7.254:3000/');
 	socket.on('news', function(data) {
 		console.log(data);
@@ -17,7 +20,7 @@ window.onload = function() {
 	socket.on('all users', function(data) {
 		console.log(data);
 	});
-};
+});
 
 </script>
 </head>
