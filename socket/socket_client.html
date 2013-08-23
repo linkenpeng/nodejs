@@ -5,11 +5,11 @@
 <title>Nodejs socket测试</title>
 <script src="jquery.min.js"></script>
 <script src="jquery.cookie.ext.js"></script>
-<script src="http://192.168.7.254:3000/socket.io/socket.io.js"></script>
+<script src="http://server.nodejs.tt:3000/socket.io/socket.io.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$.setCookie("socket","socket");
-	var socket = io.connect('http://192.168.7.254:3000/');
+	$.setCookie("socket","socket",{expires: 86400000});
+	var socket = io.connect('http://server.nodejs.tt:3000/');
 	socket.on('news', function(data) {
 		console.log(data);
 		socket.emit('my other event', 'This is Client Send.');
@@ -24,6 +24,6 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<img src="http://192.168.7.254:3000/" width="0" height="0" />
+<img src="http://server.nodejs.tt:3000/mysql/accountid/123" />
 </body>
 </html>
